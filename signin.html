@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>signin</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            font-family: "Poppins", sans-serif;
+        }
+
+        .marquee {
+            display: flex;
+            overflow: hidden;
+            white-space: nowrap;
+            background-color: black;
+            height: 40px;
+        }
+
+        .marquee-item {
+            display: inline-block;
+            padding-right: 50px;
+            /* Spacing between headings */
+            font-size: 12px;
+            color: #ffffff;
+            animation: marquee 10s linear infinite;
+            text-transform: uppercase;
+            /* Makes text uppercase */
+            text-align: center;
+            margin: auto;
+        }
+
+        @keyframes marquee {
+            0% {
+                transform: translateX(100%);
+            }
+
+            100% {
+                transform: translateX(-100%);
+            }
+        }
+
+
+        .parentnav {
+            display: flex;
+            justify-content: flex-end;
+            padding: 5px;
+            height: 7rem;
+            width: 100%;
+        }
+
+        .leftnav {
+            position: absolute;
+            left: 18px;
+            top: 89px;
+        }
+
+        .leftnav ul {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+            gap: .625rem 1.25rem;
+            list-style: none;
+        }
+
+        .leftnav ul li a {
+            text-decoration: none;
+            color: #1C1C1C;
+            font-family: "Poppins", sans-serif;
+        }
+
+        .logo img {
+            width: 9rem;
+            position: absolute;
+            left: 35rem;
+        }
+
+        .rightnav {
+            display: flex;
+            align-items: center;
+        }
+
+        .rightnav ul {
+            display: flex;
+            flex-direction: row;
+            list-style: none;
+
+        }
+
+        .rightnav ul #INR {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            color: #1C1C1C;
+            font-size: small;
+        }
+
+        i.fa.fa-chevron-down {
+            font-size: 10px;
+        }
+
+        ul li.iconsonly {
+            display: flex;
+            align-items: center;
+            font-size: 24px;
+            color: grey;
+            /* padding: 14px; */
+        }
+
+        li.iconsonly i {
+            padding: 18px;
+            cursor: pointer;
+        }
+footer{
+    margin: 2rem;
+}
+        .footercontainer1 {
+            width: 100%;
+            height: fit-content;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+        }
+
+        .footercontainer1 .footerbox1 {
+            width: 160px;
+            height: fit-content;
+            line-height: 2.2rem;
+        }
+
+        .footerbox1 p.h5 {
+            color: grey;
+        }
+
+        .footerbox1 ul {
+            color: #bdbdbd;
+        }
+
+        .footerbox1 ul li {
+            list-style: none;
+        }
+
+        .footerbox4 {
+            width: 260px;
+            height: fit-content;
+            line-height: 2rem;
+        }
+
+        .footerbox4 p.h5 {
+            color: grey;
+        }
+
+        .footerbox4 p {
+            color: #bdbdbd;
+        }
+
+        .footerbox4 input {
+            /* color: #bdbdbd;
+    border: 2px #bdbdbd; */
+            padding: 8px;
+            width: 85%;
+            margin-bottom: 10px;
+            border: 1px solid rgb(228, 226, 226);
+            height: 42px;
+            border-radius: 5px;
+
+        }
+
+         .btn1 {
+            width: 130px;
+            height: 40px;
+            background-color: rgb(15, 15, 15);
+            border: 1px solid black;
+            color: white;
+            font-weight: 200;
+            gap: 8px;
+            cursor: pointer;
+            box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.103);
+            position: relative;
+            overflow: hidden;
+            transition-duration: .3s;
+        }
+
+        .btn1::before {
+            width: 130px;
+            height: 130px;
+            position: absolute;
+            content: "";
+            background-color: white;
+            border-radius: 50%;
+            left: -100%;
+            top: 0;
+            transition-duration: .3s;
+            mix-blend-mode: difference;
+        }
+
+        .btn1:hover::before {
+            transition-duration: .3s;
+            transform: translate(100%, -50%);
+            border-radius: 0;
+        }
+
+        .btn1:active {
+            transform: translate(5px, 5px);
+            transition-duration: .3s;
+        }
+
+
+        .footercontainer2 {
+            width: 100%;
+            padding: 2rem;
+        }
+
+        .footercontainer2 ul.socialmedia {
+            justify-content: flex-start;
+            display: flex;
+            gap: 2.5rem;
+        }
+
+        .socialmedia li {
+            color: grey;
+            font-size: large;
+            gap: 1.5rem;
+            list-style: none;
+        }
+
+        .footercontainer3 {
+            padding: 1rem;
+            display: flex;
+            justify-content: space-between;
+        }
+
+
+        .leftdiv .currencybtn {
+            border: none;
+            background: none;
+            font-size: 10px;
+            display: flex;
+            align-items: center;
+            margin-left: 1rem;
+            gap: 10px;
+            color: grey;
+        }
+
+        .currencybtn img {
+            width: 20px;
+        }
+
+        .currencybtn i {
+            font-size: 10px;
+        }
+
+        .middiv {
+            color: grey;
+            font-size: x-small;
+            width: fit-content;
+        }
+
+        .rightdiv img {
+            width: 2rem;
+        }
+
+        .rightdiv {
+            width: fit-content;
+        }
+                                    /* SECTION SIGNIN */
+        .sectionsignin {
+            width: 100%;
+        }
+
+        .signinbox {
+            margin: 4rem;
+            width: 90%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 28px;
+            color: grey;
+            position: relative;
+        }
+
+        .signinbox h3 {
+    font-weight: 400;
+    font-size: xx-large;
+}
+
+            .signinbox input {
+            width: 35%;
+            height: 47px;
+            font-size: medium;
+            color: grey;
+        }
+        .signinbox #fyp {
+    position: absolute;
+    bottom: 9.5rem;
+    right: 24rem;
+    text-decoration: none;
+    color: grey;
+    font-size: smaller;
+}
+        .signinbox #fyp:hover{
+color: #1C1C1C;
+        }
+        .btn {
+ width: 25rem;
+ height: 2.8em;
+ margin: 0.5em;
+ background: black;
+ color: white;
+ border: none;
+ border-radius: none;
+ font-size: 16px;
+ cursor: pointer;
+ position: relative;
+ z-index: 1;
+ overflow: hidden;
+}
+
+button:hover {
+ color: black;
+}
+
+button:after {
+ content: "";
+ background: white;
+ position: absolute;
+ z-index: -1;
+ left: -20%;
+ right: -20%;
+ top: 0;
+ bottom: 0;
+ transform: skewX(-45deg) scale(0, 1);
+ transition: all 0.5s;
+}
+
+button:hover:after {
+ transform: skewX(-45deg) scale(1, 1);
+ -webkit-transition: all 0.5s;
+ transition: all 0.5s;
+}
+
+                .text {
+            display: flex;
+        }
+
+         .text a {
+                text-decoration: none;
+                    color: grey;
+            }
+
+            a:hover {
+                color: #1C1C1C;
+            }
+        
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <div class="marquee">
+            <h4 class="marquee-item">FREE DELIVERY ON ORDERS OVER £50</h4>
+            <h4 class="marquee-item">BANK HOLIDAY SALE NOW ON - GET UP TO 30% OFF!</h4>
+            <h4 class="marquee-item">COMPLIMENTARY PERSONALISATION</h4>
+        </div>
+    </header>
+    <nav>
+        <div class="parentnav">
+            <div class="leftnav">
+                <ul>
+                    <li><a href="#">SALE</a></li>
+                    <li><a href="#">PHONE COVERS</a></li>
+                    <li><a href="#">SMALL LEATHER GOODS</a></li>
+                    <li><a href="#">SETS</a></li>
+                </ul>
+            </div>
+            <h1 class="logo">
+                <img src="logosmall.png" alt="">
+
+            </h1>
+            <div class="rightnav">
+                <ul>
+                    <li id="INR"><img src="icons8-india-48.png" alt="flag"> INR &#8377 <i
+                            class="fa fa-chevron-down"></i></li>
+                    <li class="iconsonly">
+                        <ul>
+                            <li><i class="fa fa-regular fa-user"></i></li>
+                            <li><i class="fa fa-light fa-magnifying-glass"></i></li>
+                            <li><i class="fa fa-bag-shopping"></i></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <hr>
+    </nav>
+    <div class="sectionsignin">
+        <div class="signinbox">
+            <h3>LOGIN</h3>
+            <p>Enter your email and password to login:</p>
+            <input type="email" name="email" class="email" placeholder="E-mail">
+            <input type="password" name="password" placeholder="Password" class="pwd">
+            <a href="#" id="fyp">Forgot your password?</a>
+            <button class="btn">LOGIN</button>
+            <div class="text">
+                <p>Don't have an account?</p><a href="signup.html">Sign up</a>
+            </div>
+        </div>
+    </div>
+    <hr>
+    <footer>
+        <div class="footercontainer1">
+            <div class="footerbox1">
+                <p class="h5">SHOP</p>
+                <ul>
+                    <li>Phone Covers</li>
+                    <li>Card Holders</li>
+                    <li>Sets</li>
+                    <li>Small Leather Goods</li>
+                </ul>
+            </div>
+            <div class="footerbox1">
+                <p class="h5">INFORMATION</p>
+                <ul>
+                    <li>My Account</li>
+                    <li>FAQ</li>
+                    <li>Shipping Information</li>
+                    <li>Returns</li>
+                    <li>Become an affiliate</li>
+                    <li>Klarna</li>
+                    <li>Warranty</li>
+                </ul>
+            </div>
+            <div class="footerbox1">
+                <p class="h5">ABOUT</p>
+                <ul>
+                    <li>Our Story</li>
+                    <li>Contact Us</li>
+                    <li>Blog</li>
+                    <li>Privacy Policy</li>
+                    <li>Terms of Service</li>
+                </ul>
+            </div>
+            <div class="footerbox4">
+                <p class="h5">NEWSLETTER</p>
+                <p>Sign up to our newsletter to receive exclusive offers.</p>
+                <input type="email" id="email" placeholder="E-mail" name="email">
+                <button class="btn1">SUBSCRIBE</button>
+            </div>
+        </div>
+        <div class="footercontainer2">
+            <ul class="socialmedia">
+                <li class="fb"><i class="fa-brands fa-facebook-f"></i></li>
+                <li class="ig"><i class="fa-brands fa-instagram"></i></li>
+                <li class="tiktok"><i class="fa-brands fa-tiktok"></i></li>
+            </ul>
+        </div>
+        <div class="footercontainer3">
+            <div class="leftdiv">
+                <button class="currencybtn"><img src="indiaflag.jpg" alt=""> INDIA (INR) &#8377 <i
+                        class="fa fa-chevron-down"></i></button>
+            </div>
+            <div class="middiv">
+                <p>© 2024 - LUXE LEATHER / POWERED BY SHOPIFY</p>
+            </div>
+            <div class="rightdiv">
+                <img src="paymenticons/amex.png" alt="">
+                <img src="paymenticons/shopping (2).png" alt="">
+                <img src="paymenticons/google-pay.png" alt="">
+                <img src="paymenticons/card (1).png" alt="">
+                <img src="paymenticons/card (2).png" alt="">
+                <img src="paymenticons/paypal.png" alt="">
+                <img src="paymenticons/money.png" alt="">
+                <img src="paymenticons/card.png" alt="">
+            </div>
+
+        </div>
+    </footer>
+</body>
+
+</html>

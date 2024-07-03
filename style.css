@@ -1,0 +1,773 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+.marquee {
+    display: flex;
+    overflow: hidden;
+    white-space: nowrap;
+    background-color: black;
+    height: 40px;
+}
+
+.marquee-item {
+    display: inline-block;
+    padding-right: 50px;
+    /* Spacing between headings */
+    font-size: 12px;
+    color: #ffffff;
+    animation: marquee 10s linear infinite;
+    text-transform: uppercase;
+    /* Makes text uppercase */
+    text-align: center;
+    margin: auto;
+}
+
+@keyframes marquee {
+    0% {
+        transform: translateX(100%);
+    }
+
+    100% {
+        transform: translateX(-100%);
+    }
+}
+/* NAVBAR CSS */
+       .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* background-color: #333; */
+    color: rgb(67, 66, 66);
+    padding: 10px 20px;
+    position: relative;
+}
+
+.navbar-logo img {
+    width: 6rem;
+    position: absolute;
+    left: 38rem;
+    top: 0.5rem;
+}
+
+.navbar-links {
+    display: flex;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+.navbar-links li {
+    margin: 0 10px;
+}
+
+.navbar-links li a {
+    color: rgb(67, 66, 66);
+    text-decoration: none;
+}
+.navbar-links li a:hover{
+    color: #E32C2B;
+}
+
+/* Hamburger menu styles */
+.hamburger {
+    display: none; /* Hidden by default on larger screens */
+    cursor: pointer;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 20px;
+}
+
+label .fafa-bars {
+    width: 25px;
+    height: 3px;
+    color: rgb(67, 66, 66);
+    margin: 4px 0;
+    transition: transform 0.4s ease;
+}
+
+/* Checkbox for toggling menu */
+.menu-toggle {
+    display: none;
+}
+.navbar-icons {
+    display: flex;
+    align-items: center;
+}
+
+.navbar-icons ul {
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+
+}
+
+.navbar-icons ul #INR {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    color: #1C1C1C;
+    font-size: small;
+}
+
+i.fa.fa-chevron-down {
+    font-size: 10px;
+}
+
+li.iconsonly {
+    display: flex;
+    align-items: center;
+    font-size: 24px;
+    color: grey;
+    /* padding: 14px; */
+}
+
+li.iconsonly a {
+    color: grey;
+}
+
+li.iconsonly i {
+    padding: 18px;
+    cursor: pointer;
+}
+/* Media query for smaller screens */
+@media (max-width: 768px) {
+    .navbar-links {
+        display: none; /* Hide navigation links by default on smaller screens */
+        flex-direction: column;
+        width: 98%;
+        position: absolute;
+        top: 5.5rem;
+        left: 0;
+        background-color: #ffffff;
+        padding: 10px;
+        z-index: 1000; /* Ensures it's above other content */
+    }
+
+    .navbar-links li {
+        margin: 10px 0;
+    }
+
+    .hamburger {
+        display: flex; /* Display hamburger menu on smaller screens */
+    }
+
+    /* Show menu when checkbox is checked */
+    .menu-toggle:checked + .hamburger + .navbar-links {
+        display: flex;
+    }
+}
+
+/* SECTIONS
+                         SECTION-1 */
+.section1 {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+
+.section1 img {
+    width: 95rem;
+    height: 35rem;
+transition: 3s all ease-in;
+overflow: hidden;
+}
+
+.section1:hover img {
+    transform: scale(1.5);
+}
+
+.section1 .tx1 {
+    position: absolute;
+    top: 14rem;
+    left: 16rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    line-height: 2.5rem;
+}
+
+.tx1 h4 {
+    color: white;
+}
+
+/* SECTION-2 CSS */
+.section2 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    margin-top: 2rem;
+}
+
+.tx2 {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    align-items: center;
+    font-family: "Poppins", sans-serif;
+}
+
+.tx2 p {
+    font-size: medium;
+    font-weight: 200px;
+}
+
+.tx2 h2 {
+    font-size: xx-large;
+    font-weight: 300px;
+}
+
+.productscontainer {
+    width: 100%;
+    display: flex;
+
+}
+
+.product {
+    height: 28rem;
+    width: 20rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: 1px groove #bdbdbd;
+    border-radius: 3px;
+    margin: 0px 13px;
+}
+
+.product img {
+    height: 19rem;
+    width: 18rem;
+    padding: 0px 10px;
+    transition: transform 0.3s ease;
+}
+
+.product img:hover {
+    transform: translateY(-20px);
+}
+
+.productinfo {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.productinfo p {
+    font-size: 0.9rem;
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    color: #1C1C1C;
+}
+
+.productinfo h5 {
+    color: #E32C2B;
+    margin-top: 5px;
+}
+
+/* black buttons CSS */
+.btn1 {
+    width: 130px;
+    height: 40px;
+    background-color: rgb(15, 15, 15);
+    border: 1px solid black;
+    color: white;
+    font-weight: 200;
+    gap: 8px;
+    cursor: pointer;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.103);
+    position: relative;
+    overflow: hidden;
+    transition-duration: .3s;
+}
+
+.btn1::before {
+    width: 130px;
+    height: 130px;
+    position: absolute;
+    content: "";
+    background-color: white;
+    border-radius: 50%;
+    left: -100%;
+    top: 0;
+    transition-duration: .3s;
+    mix-blend-mode: difference;
+}
+
+.btn1:hover::before {
+    transition-duration: .3s;
+    transform: translate(100%, -50%);
+    border-radius: 0;
+}
+
+.btn1:active {
+    transform: translate(5px, 5px);
+    transition-duration: .3s;
+}
+
+/* SECTION-3 CSS */
+.section3 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    margin-top: 2rem;
+}
+
+.section3 h2 {
+    font-size: xx-large;
+    font-weight: 300px;
+    font-family: "Poppins", sans-serif;
+}
+
+/* SECTION-4 CSS */
+.section4 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    margin-top: 2rem;
+}
+
+.section4 h2 {
+    font-size: xx-large;
+    font-weight: 300px;
+    font-family: "Poppins", sans-serif;
+}
+
+.section4 .categorycontainer {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+
+.section4 .card1 {
+    height: 25rem;
+    width: 23rem;
+    overflow: hidden;
+    margin: 0 auto;
+}
+
+.section4 .card1 img {
+    height: 25rem;
+    width: 23rem;
+    transition: 3s all ease-in;
+}
+
+.card1:hover img {
+    transform: scale(1.5);
+}
+
+.card1 {
+    position: relative;
+}
+
+.card1 .tx4 {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    bottom: 80px;
+    left: 58px;
+    font-family: "Poppins", sans-serif;
+    gap: 20px;
+}
+
+.tx4 .h2 {
+    font-size: x-large;
+    color: #ffffff;
+
+}
+
+/* .tx4 .btn2 {
+    background-color: #ffffff;
+    color: black;
+    text-decoration: none;
+    border: none;
+    padding: 10.4px 28px;
+    cursor: pointer;
+    margin: 20px;
+
+} */
+.tx4 .btn2 {
+    width: 130px;
+    height: 40px;
+    background-color: white border: 1px solid white;
+    color: black;
+    font-weight: 200;
+    gap: 8px;
+    cursor: pointer;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.103);
+    position: relative;
+    overflow: hidden;
+    transition-duration: .3s;
+}
+
+.btn2::before {
+    width: 130px;
+    height: 130px;
+    position: absolute;
+    content: "";
+    background-color: white;
+    border-radius: 50%;
+    left: -100%;
+    top: 0;
+    transition-duration: .3s;
+    mix-blend-mode: difference;
+}
+
+.btn2:hover::before {
+    transition-duration: .3s;
+    transform: translate(100%, -50%);
+    border-radius: 0;
+}
+
+.btn2:active {
+    transform: translate(5px, 5px);
+    transition-duration: .3s;
+}
+
+/* SECTION-5 */
+.section5 {
+    display: flex;
+    justify-content: center;
+    margin: 3rem;
+}
+
+.tx5 {
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-family: "Poppins", sans-serif;
+    color: grey;
+    gap: 10px;
+}
+
+.tx5 .h3 {
+    font-size: 1.5rem;
+    color: #1C1C1C;
+}
+
+.tx5 p {
+    color: grey;
+}
+
+.pic5 {
+    width: 50%;
+
+}
+
+/* SECTION-6 */
+.section6 {
+    display: flex;
+    margin: 3rem;
+    position: relative;
+}
+
+.pic6 {
+    width: 50%;
+    left: 2rem;
+}
+
+.tx6 {
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 6rem;
+    right: 1rem;
+    font-family: "Poppins", sans-serif;
+
+    gap: 10px;
+}
+
+.tx6 .h3 {
+    font-size: 1.5rem;
+    color: #1C1C1C;
+}
+
+.tx6 p {
+    color: grey;
+}
+
+.tx6 a {
+    color: #1C1C1C;
+}
+
+.tx6 a:hover {
+    text-decoration: none;
+}
+
+/* SECTION-7 CSS */
+.secton7 {
+    position: relative;
+}
+
+.parallax {
+    background-image: url(sec7parallaximg.webp);
+    min-height: 500px;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.parallax .pcontainer {
+    box-sizing: border-box;
+    border-radius: 0px;
+    border-width: 0px;
+    /* box-shadow: 0.5px 0.5px; */
+    position: relative;
+    top: 13rem;
+    left: 27rem;
+    width: fit-content;
+}
+
+.parallaxtext {
+    font-family: "Poppins", sans-serif;
+    line-height: 1.5rem;
+    background-color: white;
+    padding: 48px 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 24rem;
+    height: 10rem;
+}
+
+.parallaxtext p.h6 {
+    color: #1c1c1c;
+
+}
+
+.parallaxtext p {
+    color: grey;
+    font-size: small;
+}
+
+/* SECTION-8 CSS */
+.section8 {
+    margin-top: 2rem;
+}
+
+.section8 .tx8 {
+    text-align: center;
+    line-height: 3.5rem;
+}
+
+.tx8 .h6 {
+    color: grey;
+    font-size: large;
+}
+
+.tx8 .h2 {
+    color: #1C1C1C;
+    font-size: xx-large;
+}
+
+.container8a {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    gap: 3px;
+}
+
+.container8a .imagecard1 {
+    width: auto;
+    height: auto;
+    gap: 5px;
+    position: relative;
+}
+
+.imagecard1 img {
+    width: 250px;
+    height: 250px;
+}
+
+.imagecard1 .overlay {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 250px;
+    width: 250px;
+    opacity: 0;
+    transition: .3s ease;
+    background-color: #bdbdbda3;
+}
+
+.imagecard1:hover .overlay {
+    opacity: 1;
+}
+
+.icon {
+    color: white;
+    font-size: 30px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.fa-brands:hover {
+    color: #eee;
+}
+
+.container8b {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    gap: 3px;
+}
+
+.container8b .imagecard1 {
+    width: auto;
+    height: auto;
+    gap: 5px;
+    position: relative;
+}
+
+/* section-8 part-c */
+.container8c {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-around;
+    padding: 2.5rem 2rem;
+}
+
+.iconwithtext {
+    color: #1C1C1C;
+    display: flex;
+    flex-direction: column;
+    line-height: 2.5rem;
+    align-items: center;
+
+}
+
+.iconwithtext i {
+    font-size: 27px;
+    color: #bdbdbd;
+}
+
+.iconwithtext .itext {
+    font-size: 14px;
+
+}
+
+/* FOOTER CSS */
+.footercontainer1 {
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.footercontainer1 .footerbox1 {
+    width: 160px;
+    height: fit-content;
+    line-height: 2.2rem;
+}
+
+.footerbox1 p.h5 {
+    color: grey;
+}
+
+.footerbox1 ul {
+    color: #bdbdbd;
+}
+
+.footerbox1 ul li {
+    list-style: none;
+}
+
+.footerbox4 {
+    width: 260px;
+    height: fit-content;
+    line-height: 2rem;
+}
+
+.footerbox4 p.h5 {
+    color: grey;
+}
+
+.footerbox4 p {
+    color: #bdbdbd;
+}
+
+.footerbox4 input {
+    /* color: #bdbdbd;
+    border: 2px #bdbdbd; */
+    padding: 8px;
+    width: 85%;
+    margin-bottom: 10px;
+    border: 1px solid rgb(228, 226, 226);
+    height: 42px;
+    border-radius: 5px;
+
+}
+
+.footercontainer2 {
+    width: 100%;
+    padding: 2rem;
+}
+
+.footercontainer2 ul.socialmedia {
+    justify-content: flex-start;
+    display: flex;
+    gap: 2.5rem;
+}
+
+.socialmedia li {
+    color: grey;
+    font-size: large;
+    gap: 1.5rem;
+    list-style: none;
+}
+
+.footercontainer3 {
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+
+.leftdiv .currencybtn {
+    border: none;
+    background: none;
+    font-size: 10px;
+    display: flex;
+    align-items: center;
+    margin-left: 1rem;
+    gap: 10px;
+    color: grey;
+}
+
+.currencybtn img {
+    width: 20px;
+}
+
+.currencybtn i {
+    font-size: 10px;
+}
+
+.middiv {
+    color: grey;
+    font-size: x-small;
+    width: fit-content;
+}
+
+.rightdiv img {
+    width: 2rem;
+}
+
+.rightdiv {
+    width: fit-content;
+}
